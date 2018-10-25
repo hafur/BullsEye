@@ -7,11 +7,19 @@
 //
 
 import UIKit
+import WebKit
 
 class AboutAuthor: UIViewController {
 
+    @IBOutlet weak var webView: WKWebView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let hafur_url = URL(string: "https://www.hafur.com")
+        let url_request = URLRequest(url: hafur_url!)
+        webView.load(url_request)
     }
     
     @IBAction func close() {
